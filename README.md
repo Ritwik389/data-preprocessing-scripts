@@ -5,7 +5,7 @@ This repository contains Python scripts for basic data preprocessing tasks using
 ## Scripts Included
 
 1. **Ordinal Encoding** (`ordinal encoding.py`)  
-   Convert categorical variables into ordinal numeric values.  
+   Convert categorical variables into ordinal numeric values. 
 
 2. **One-Hot Encoding** (`OneHotEncoding.py`)  
    Convert categorical variables into binary/dummy variables.  

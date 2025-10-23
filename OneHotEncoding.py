@@ -1,4 +1,3 @@
-
 import pandas as pd
 import numpy as np
 
@@ -16,7 +15,7 @@ for col in cols_to_encode:
     col = col.strip()
     while col not in df.columns:
         col = input(f"Column '{col}' does not exist. Please enter a valid column name: ").strip()
-    df[col] = df[col].astype(str).str.lower().str.strip()
+    df[col] = df[col].str.lower().str.strip()
     unique = df[col].dropna().unique().tolist()
 
     print(f"Unique values in column '{col}': {unique}")
@@ -24,8 +23,9 @@ for col in cols_to_encode:
         new_col = f'{col}_{val}'
         df[new_col] = (df[col] == val).astype(int)
 
-    if f'{col}_nan' in df.columns:
-        df = df.drop(columns=[f'{col}_nan'], inplace=False)
     df = df.drop(columns=[col], inplace=False)
+
+
+print(df.head())
 
 df.to_csv("onehot_encoded_data.csv", index=False)
